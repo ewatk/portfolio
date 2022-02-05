@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello, I'm Elaine</title>
+    <link rel="stylesheet" href="runhellostyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <header id="welcome-section">
+            <h1>Hello,</h1>
+            <h1>I'm Elaine</h1>
+            <h2>web developer</h2>
+        </header>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="#projects">Work</a>
+                </li>
+                <li><a href="#about">About</a>
+                </li>
+                <li><a href="#contact">Contact</a> </li>
+            </ul>
+        </nav>
+
+        
+        <section id="projects">
+            <div class="work-flex">
+                <div class="project-tile tile-1">
+                    <h4>Tribute Page</h4>
+                    <a href="https://github.com/ewatk/portfolio.git" target="_blank" id="profile-link">Website Link</a>
+                    <a href="" target="_blank">Source Code</a>
+                </div>
+                <div class="project-tile tile-2">
+                    <h4>Survey Form</h4>
+                    <a href="https://github.com/ewatk/portfolio.git" target="_blank" id="profile-link">Website Link</a>
+                    <a href="" target="_blank">Source Code</a>
+                </div>
+                <div class="project-tile tile-3">
+                    <h4>Product Landing Page</h4>
+                    <a href="https://github.com/ewatk/portfolio.git" target="_blank" id="profile-link">Website Link</a>
+                    <a href="" target="_blank">Source Code</a>
+                </div>
+                <div class="project-tile tile-4">
+                    <h4>Technical Documentation Page</h4>
+                    <a href="https://github.com/ewatk/portfolio.git" target="_blank">Website Link</a>
+                    <a href="" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="circle">
+                <img src="./Photos/portfoliopic.png" alt="profile image" width="150px">
+            </div>
+
+            <p>Hello, I am Elaine and I am a selt-taught web developer. During my free time, I've put in 300 hours and counting to studying front end development to enter into the computer science job field. Ever since the first line of HTML, I've always came back to the screen every chance I get for a challenge. Please keep up with my journey if interested through my Github!</p><br>
+                        
+        </section>
+
+
+        <aside class="icons">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+        </aside>
+
+        <section id="contact">
+            <form class="contact-form">
+                <h4>Please reach out about any questions you may have.</h4>
+                <div id="form-group">                        
+                    <input type="text" name="name" id="name" placeholder="" required=""><p>Name</p>
+
+                    <input type="email" name="email" id="email" placeholder="" required=""><p>Email</p>
+
+                    <textarea name="text" class="textarea" 
+                    placeholder=""></textarea><br><p>Message<p>
+
+                    <button id="submit" type="submit"><a href="mailto:someone@example.com"></a>Submit</button>
+                </div>
+            </form>
+
+        </section>
+
+        <footer>All Rights Reserved &copy 2022 Elaine Watkins</footer>
+    </div>
+
+    <script>
+        let mainNavLinks = document.querySelectorAll("nav ul li a");
+
+        let mainSections = document.querySelectorAll("main section");
+
+        let lastId;
+        let cur = [];
+
+        window.addEventListener("scroll", event => {
+            let fromTop = window.scrollY;
+
+            mainNavLinks.forEach(link => {
+                let section = document.querySelector(link.hash);
+
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+
+                    link.classList.add("current");
+                }
+                else{
+                    link.classList.remove("current");
+                }
+            })
+        });
+    </script>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+</html>
